@@ -134,6 +134,7 @@ function App() {
         };
       };
     }
+    geotab.addin.moveEv();
   }, []);
 
   return (
