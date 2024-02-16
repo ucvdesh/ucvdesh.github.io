@@ -12,7 +12,7 @@ function App() {
       console.log(">>>>", geotab);
 
       const foo = async () => {
-        const result = await geotab.addin.api.call('Get', {
+        const result = await geotab.api.call('Get', {
           typeName: 'Device'
         });
         console.log('result', result);
