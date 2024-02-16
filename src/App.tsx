@@ -9,7 +9,8 @@ function App() {
     console.log(window)
     const api = window.GeotabApi;
     if (api) {
-        const result = await api.call('Get', {
+      console.log("pase por aqui")
+        const result = await api.prototype.call('Get', {
           typeName: 'Device'
         });
         console.log('result', result);
