@@ -1,27 +1,27 @@
 // @ts-nocheck
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
 
-  useEffect(() => {
+  const foo = useCallback(async () => {
     console.log(window)
     const api = window.GeotabApi;
     if (api) {
-      console.log(">>>>", api);
-
-      const foo = async () => {
         const result = await api.call('Get', {
           typeName: 'Device'
         });
         console.log('result', result);
-      }
-
-      foo();
 
       console.log('initializeTriggered');
+      return result;
     }
+    return false;
+  }, [])
+
+  useEffect(() => {
+    foo().then((result) => console.log('result', result))
   }, []);
 
   return (
