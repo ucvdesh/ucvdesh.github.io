@@ -6,17 +6,22 @@ import './App.css';
 function App() {
 
   const foo = useCallback(async () => {
-    console.log(window)
-    const api = window.GeotabApi;
-    if (api) {
-      console.log("pase por aqui")
-        const result = await api.prototype.call('Get', {
-          typeName: 'Device'
-        });
-        console.log('result', result);
 
-      console.log('initializeTriggered');
-      return result;
+    if (typeof window !== "undefined") {
+      window.onload = function() {
+        // Geotab podría pasar el objeto api como argumento a una función de inicialización
+        initializeAddIn((api, state) => {
+          console.log(window)
+          console.log("pase por aqui")
+          const result = await api.call('Get', {
+            typeName: 'Device'
+          });
+          console.log('result', result);
+
+          console.log('initializeTriggered');
+          return result;
+        });
+      }
     }
     return false;
   }, [])
