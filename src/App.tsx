@@ -18,6 +18,8 @@ function App() {
         console.log('result', result);
       }
 
+      foo();
+
       console.log('initializeTriggered');
     }
   }, []);
