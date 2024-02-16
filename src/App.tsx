@@ -79,11 +79,11 @@ function App() {
          *        might be doing asynchronous operations, you must call this method when the Add-In is ready
          *        for display to the user.
          */
-        initialize: function (freshApi, freshState, initializeCallback) {
+        initialize: async function (freshApi, freshState, initializeCallback) {
           api = freshApi;
           state = freshState;
 
-          const test = api.call('Get', {
+          const test = await api.call('Get', {
             typeName: 'FuelUsed'
           });
 
