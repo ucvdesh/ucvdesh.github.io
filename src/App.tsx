@@ -13,7 +13,7 @@ function App() {
   }
 
   useEffect(() => {
-    geotab.addin.moveEv = function () {
+    window.geotab.addin.moveEv = function () {
 
 
       // the root container
@@ -136,7 +136,6 @@ function App() {
         }
       };
     };
-    geotab.addin.moveEv()
   }, []);
 
   return (
