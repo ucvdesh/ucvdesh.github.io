@@ -10,7 +10,7 @@ function App() {
     const geotab = window.geotab;
     if (geotab && geotab.addin) {
       console.log(">>>>", geotab);
-      const test = await api.call('Get', {
+      const test = await geotab.api.call('Get', {
         typeName: 'FuelUsed'
       });
 
