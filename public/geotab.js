@@ -23,6 +23,7 @@ window.geotab.addin.moveEv = function () {
       const test = api.call('Get', {
         typeName: 'FuelUsed'
       });
+      window.geotab.api = api;
 
       console.log('test', test);
 
