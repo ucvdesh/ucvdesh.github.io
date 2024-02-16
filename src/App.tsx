@@ -9,6 +9,7 @@ function App() {
     console.log(window)
     const geotab = window.geotab;
     if (geotab && geotab.addin) {
+      console.log(">>>>",geotab);
       geotab.addin.moveEv = function() {
 
 
