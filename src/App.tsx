@@ -7,12 +7,12 @@ function App() {
 
   useEffect(() => {
     console.log(window)
-    const geotab = window.geotab;
-    if (geotab && geotab.addin) {
-      console.log(">>>>", geotab);
+    const api = window.GeotabApi;
+    if (api) {
+      console.log(">>>>", api);
 
       const foo = async () => {
-        const result = await geotab.api.call('Get', {
+        const result = await api.call('Get', {
           typeName: 'Device'
         });
         console.log('result', result);
