@@ -10,11 +10,13 @@ function App() {
     const geotab = window.geotab;
     if (geotab && geotab.addin) {
       console.log(">>>>", geotab);
-      const test = await geotab.api.call('Get', {
-        typeName: 'FuelUsed'
-      });
 
-      console.log('test', test);
+      const foo = async () => {
+        const result = await geotab.addin.api.call('Get', {
+          typeName: 'Device'
+        });
+        console.log('result', result);
+      }
 
       console.log('initializeTriggered');
     }
