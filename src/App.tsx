@@ -13,8 +13,7 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(window, global)
-    geotab.addin.moveEv = function () {
+    window?.geotab?.addin?.moveEv = function () {
 
 
       // the root container
