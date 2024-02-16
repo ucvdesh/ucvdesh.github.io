@@ -13,7 +13,7 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(windows)
+    console.log(window, global)
     window.geotab.addin.moveEv = function () {
 
 
